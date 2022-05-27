@@ -1,0 +1,47 @@
+
+Bir class'in variable veya methodunu 3 farkli yontem ile yapabiliriz Java'da
+
+===============================1-Inheritance=============================
+kullandigimiz class'i extends key word'u ile istedigimiz Class'in child'i yapabiliriz
+Bu duruda object olusturmaya gerek kalmadan Parent class'a ulasabilir ve oradaki variable ve method'u
+kullanabiliriz. Test Base'de yaptigimiz gibi
+
+Inheritance ile variable ve method kullanirken STATIC keyword'une dikkat etmek gerekir. Static olarak
+tanimlanmis bir variable veya method static olmayan method icerisinde kullanilamaz.
+
+================================2-Object=================================
+Bir class'tan obje olusturarak istedigimiz class'a ulasabilir ve o class'daki variable ve methodlari
+object'imiz araciligiyla kullanabiliriz.
+
+mesela:
+Servis classindan Okul class'ina ulasmak icin Okul class'indan bir obje olustururuz ve obje uzerinden
+variable veye methodlara ulasiriz. Asagidaki gibi:
+
+class
+
+            public class Okul{
+            String okulIsmi="bla bla"
+            static int ogrenciSayisi=120;
+
+            public void okulMethod(){
+            sout("bla bla");
+            }
+            }
+
+class
+
+            public class Servis{
+
+            public static void main(String[] args){
+
+            Okul okulObje=new Okul();
+            sout(okulObje.okulIsmi);
+            okulObje.okulMethod();
+
+            sout(Okul.ogrenciSayisi)
+            }
+            }
+
+=================================3-Static Class Uyeleri====================
+Eger kullanacagimiz variable veya method static ise object olusturmadan direk class ismi ile
+variable veya method'a ulasabiliriz.
