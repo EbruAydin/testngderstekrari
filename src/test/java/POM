@@ -1,0 +1,46 @@
+===============POM temelde 3 package icerir=========
+>Tests:
+Sadece testleri execute etmek icin gerekli adimlari yazacagimiz class'lari icerir. Hicbir data girisi yapilmayacak
+
+>Pages:
+Test yapilacak sayfalardaki Web Elementlerini locate etmek ve temel methodlari olusturmak icin kullanilir
+
+>Utilities
+Driver, TestBase, ve ConfigurationReader class'larini icerir
+
+========================
+Bir page class’i olusturdugumuzda ilk isimiz bir
+constructor olusturup, pageFactory class’indan
+initElements( ) method’unu kullanmak olmalidir
+
+1. PageFactory, page object dizayni icin bir önemli
+classtır.
+
+2. Page objelerini instantiate(ilk deger atama) için
+page classlarında PageFactory kullanıyoruz
+
+3. PageFactory.initElements(driver,this);
+this => page instance
+driver => bizim gonderecegimiz driver
+
+4. Aslinda PageFactory class’ina, elementlere ilk
+degeri atayan initElements( ) metodunu
+kullanmak icin ihtiyacimiz var
+
+=================================================
+Page class’larinda webElementleri locate etmek icin
+simdiye kadar kullandigimiz
+driver.findElement( ) method’unu kullanmayacagiz.
+
+1. @FindBy notasyonu test class’larinda
+kullanacagimiz Web Elementlerini Page
+sayfasinda locate etmek icin kullanilir
+
+2. Bunun icin kullanacagimiz Web Elementini public
+olarak olusturmali, sonra da @FindBy notasyonu
+ile locate etmeliyiz
+
+3. Bu islemi yaptiktan sonra hangi test
+methodumuzda bu web elemente ihtiyac duyarsak
+page class’indan uretecegimiz obje uzerinden
+rahatlikla kullanabiliriz
