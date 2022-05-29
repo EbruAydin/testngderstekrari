@@ -33,4 +33,9 @@ public class HotelMyCampPage {
 
     @FindBy (xpath="//a[text()=' Log out ']")
     public WebElement logOutElementi;
+
+
+    @FindBy (xpath="//div[@class='validation-summary-errors']")
+    public WebElement tryAgainText;
+
 }

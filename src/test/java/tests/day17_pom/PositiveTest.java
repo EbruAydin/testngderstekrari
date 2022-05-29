@@ -9,31 +9,43 @@ import utilities.Driver;
 
 public class PositiveTest {
 
+    //https://www.hotelmycamp.com adresine gidin
+    //login butonuna basin
+    //test data userName:manager
+    //test data password:Manager1!
+    //obj.loginTusuElementi.click();
+    //degerler girildiginde sayfaya basarili bir sekilde girildigini test edin.
     @Test
-    public void positiveLoginTest(){
-        HotelMyCampPage obj=new HotelMyCampPage();
+    public void positiveLoginTest() {
+        HotelMyCampPage obj = new HotelMyCampPage();
 
-        //https://www.hotelmycamp.com adresine gidin
         Driver.getDriver().get("https://www.hotelmycamp.com ");
 
-        //login butonuna basin
+        Actions action = new Actions(Driver.getDriver());
+        action
+                .click(obj.loginTusuElementi)
+                .perform();
+
+
+        /*
+        1.yol
         obj.loginTusuElementi.click();
-
-
-        //test data userName:manager
         obj.userName.sendKeys("manager" + Keys.ENTER);
-
-
-        //test data password:Manager1!
         obj.password.sendKeys("Manager1!" + Keys.ENTER);
+         */
 
-        //obj.loginTusuElementi.click();
+
+        action.
+                click(obj.userName)
+                .sendKeys("manager")
+                .sendKeys(Keys.TAB)
+                .sendKeys("Manager1!")
+                .sendKeys(Keys.ENTER)
+                .perform();
 
         //degerler girildiginde sayfaya basarili bir sekilde girildigini test edin.
 
-        Actions action=new Actions(Driver.getDriver());
         action.moveToElement(obj.userNameAferLogin).perform();
-
         Assert.assertTrue(obj.logOutElementi.isDisplayed());
 
         Driver.closeDriver();

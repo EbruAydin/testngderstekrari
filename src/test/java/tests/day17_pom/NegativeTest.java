@@ -1,6 +1,11 @@
 package tests.day17_pom;
 
+import Pages.HotelMyCampPage;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
 import org.testng.annotations.Test;
+import utilities.Driver;
 
 public class NegativeTest {
     /*
@@ -15,6 +20,21 @@ public class NegativeTest {
 
     @Test
     public void negativeLoginTest() {
+        HotelMyCampPage obj = new HotelMyCampPage();
+        Driver.getDriver().get("https://www.hotelmycamp.com/");
+        obj.loginTusuElementi.click();
+
+        Actions action=new Actions(Driver.getDriver());
+
+        action.
+                click(obj.userName)
+                .sendKeys("manager1")
+                .sendKeys(Keys.TAB)
+                .sendKeys("manager1!")
+                .sendKeys(Keys.ENTER)
+                .perform();
+
+        Assert.assertTrue(obj.tryAgainText.isDisplayed());
 
     }
 }
