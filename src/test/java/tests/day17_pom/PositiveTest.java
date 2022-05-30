@@ -34,7 +34,6 @@ public class PositiveTest {
         obj.password.sendKeys("Manager1!" + Keys.ENTER);
          */
 
-
         action.
                 click(obj.userName)
                 .sendKeys("manager")
