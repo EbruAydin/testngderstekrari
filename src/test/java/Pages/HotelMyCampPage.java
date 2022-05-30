@@ -1,9 +1,13 @@
 package Pages;
 
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.WindowType;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
+
+import java.util.Set;
+import java.util.stream.Collectors;
 
 public class HotelMyCampPage {
 
@@ -37,5 +41,55 @@ public class HotelMyCampPage {
 
     @FindBy (xpath="//div[@class='validation-summary-errors']")
     public WebElement tryAgainText;
+
+    //6. Hotel Management/Hotel List menusunden
+
+    @FindBy (xpath="(//li[@class='start open'])[1]")
+    public WebElement systemManagement;
+
+    @FindBy (xpath="//*[text()='Hotel Management']")
+    public WebElement hotelManagement;
+
+    @FindBy (xpath="(//li//ul//li)[5]")
+    public WebElement hotelListMenu;
+
+    //ADD HOTEL butonuna tiklayin
+    @FindBy (xpath="//*[text()='Add Hotel ']")
+    public WebElement addHotelButonu;
+
+    //7. Açılan sayfadaki tüm metin kutularına istediğiniz verileri girin.
+    @FindBy (xpath="//input[@name='Code']")
+    public WebElement code;
+
+    @FindBy (xpath="//input[@name='Name']")
+    public WebElement name;
+
+    @FindBy (xpath="//input[@name='Address']")
+    public WebElement address;
+
+    @FindBy (xpath="//input[@name='Phone']")
+    public WebElement phone;
+
+    @FindBy (xpath="//input[@name='Email']")
+    public WebElement email;
+
+    @FindBy (xpath = "//select[@id='IDGroup']")
+    public WebElement select;
+
+    @FindBy (xpath="(//select//option)[2]")
+    public WebElement options;
+
+    //8. Save butonuna tıklayın.
+
+    @FindBy (xpath="//button[@id='btnSubmit']")
+    public WebElement saveButton;
+
+    //9. “Hotel was inserted successfully” textinin göründüğünü test edin.
+    @FindBy (xpath="//div[@class='bootbox-body']")
+    public WebElement basariliKayitText;
+
+    @FindBy (xpath="(//button[@type='button'])[6]")
+    public WebElement okButonu;
+
 
 }

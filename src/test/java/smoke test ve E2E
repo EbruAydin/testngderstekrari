@@ -1,0 +1,15 @@
+
+======================Notlar============================
+Smoke Test: Kullandigimiz uygulamanin onemli/temel fonksiyonlarini test etmek icin yapilir.
+Genellikle sabah ilk ise baslama gorevimizdir. Login,logout,sepete ekle,odeme yap.. gibi temel
+islevleri test ederiz. Eger smoke test FAILED olursa zaman gecirmeksizin tum ekibi haberdar ederiz.
+
+Sistemin saglikli calistigini anlamak icin 3 test yapilir
+1- Pozitif Login Test
+2- Negatif Login Test
+3- E2E Testi (system testi)
+
+End to End Test(E2E): Bir uygulamanin tum adimlarini bastan sona kadar test etmek demektir.
+Ornegin biz yonetici bir oda olusturabilir mi diye test yaptigimizda sisteme giristen oda olusturuldu
+yazisi gorulunceye kadar tum adimlari test etmis oluruz, dolayisiyla E2E testi yapmis oluruz. Bu
+testin diger adi da Sistem Testi’dir.
