@@ -1,13 +1,10 @@
 package Pages;
 
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.WindowType;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
-import java.util.Set;
-import java.util.stream.Collectors;
 
 public class HotelMyCampPage {
 
@@ -53,6 +50,12 @@ public class HotelMyCampPage {
     @FindBy (xpath="(//li//ul//li)[5]")
     public WebElement hotelListMenu;
 
+    @FindBy (xpath="(//li//ul//li)[6]")
+    public WebElement hotelRoomMenu;
+
+    @FindBy (xpath="(//*[text()='List Of Hotelrooms'])[2]")
+    public WebElement listOfHotelText;
+
     //ADD HOTEL butonuna tiklayin
     @FindBy (xpath="//*[text()='Add Hotel ']")
     public WebElement addHotelButonu;
@@ -61,23 +64,8 @@ public class HotelMyCampPage {
     @FindBy (xpath="//input[@name='Code']")
     public WebElement code;
 
-    @FindBy (xpath="//input[@name='Name']")
-    public WebElement name;
-
-    @FindBy (xpath="//input[@name='Address']")
-    public WebElement address;
-
-    @FindBy (xpath="//input[@name='Phone']")
-    public WebElement phone;
-
-    @FindBy (xpath="//input[@name='Email']")
-    public WebElement email;
-
     @FindBy (xpath = "//select[@id='IDGroup']")
     public WebElement select;
-
-    @FindBy (xpath="(//select//option)[2]")
-    public WebElement options;
 
     //8. Save butonuna tıklayın.
 
@@ -93,3 +81,20 @@ public class HotelMyCampPage {
 
 
 }
+/*
+    @FindBy (xpath="//input[@name='Name']")
+    public WebElement name;
+
+    @FindBy (xpath="//input[@name='Address']")
+    public WebElement address;
+
+    @FindBy (xpath="//input[@name='Phone']")
+    public WebElement phone;
+
+    @FindBy (xpath="//input[@name='Email']")
+    public WebElement email;
+
+    @FindBy (xpath="(//select//option)[2]")
+    public WebElement options;
+
+     */

@@ -72,6 +72,7 @@ public class E2ETesting {
                 .perform();
 
 
+
         //select section
         WebElement dropDown = obj.select;
         Select select = new Select(dropDown);
@@ -90,5 +91,6 @@ public class E2ETesting {
         //10. OK butonuna tıklayın
         obj.okButonu.click();
 
+        //Driver.closeDriver();
     }
 }
