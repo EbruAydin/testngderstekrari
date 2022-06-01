@@ -19,11 +19,12 @@ public class C01 {
 // 6.Sonuçlar eşleşiyorsa  konsola test pass yazirin
 // 7.Checkout'a tıklayın
 
+    ReactPage obj = new ReactPage();
+
     @Test
     public void test() throws InterruptedException {
 
-        ReactPage obj = new ReactPage();
-
+        //config ekle !!!
         Driver.getDriver().get("https://react-shopping-cart-67954.firebaseapp.com/");
 
         // 2.Web sitesindeki tüm öğeleri listeleyin ve yazdirin

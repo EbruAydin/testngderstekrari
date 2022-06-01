@@ -19,11 +19,11 @@ public class HotelNegativeTestConfig {
           test data password: manager1!
           Degerleri girildiginde sayfaya girilemedigini test et
      */
-
+    HotelMyCampPage obj=new HotelMyCampPage();
     @Test
     public void test01() throws InterruptedException {
         SoftAssert softAssert = new SoftAssert();
-        HotelMyCampPage obj=new HotelMyCampPage();
+
         //  https://www.hotelmycamp.com/ adresine git
         Driver.getDriver().get(ConfigReader.getProperty("hotelUrl"));
         //          login butonuna bas

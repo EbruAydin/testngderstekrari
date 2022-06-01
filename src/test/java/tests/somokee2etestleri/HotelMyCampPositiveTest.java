@@ -8,13 +8,11 @@ import org.testng.annotations.Test;
 import utilities.ConfigReader;
 import utilities.Driver;
 
-import java.io.ObjectInputFilter;
-
 public class HotelMyCampPositiveTest {
+    HotelMyCampPage obj=new HotelMyCampPage();
 
     @Test
     public void test01(){
-        HotelMyCampPage obj=new HotelMyCampPage();
 
         //https://www.hotelmycamp.com adresine gidin
         Driver.getDriver().get(ConfigReader.getProperty("hotelUrl"));
@@ -23,7 +21,7 @@ public class HotelMyCampPositiveTest {
 
         //login butonuna basin
         action
-                .click(obj.loginTusuElementi)
+                .click(obj.logIn)
                 .perform();
 
         //test data userName:manager

@@ -9,6 +9,7 @@ import utilities.Driver;
 public class HotelMyCampPage {
 
     public HotelMyCampPage(){
+
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
@@ -34,7 +35,6 @@ public class HotelMyCampPage {
 
     @FindBy (xpath="//a[text()=' Log out ']")
     public WebElement logOutElementi;
-
 
     @FindBy (xpath="//div[@class='validation-summary-errors']")
     public WebElement tryAgainText;

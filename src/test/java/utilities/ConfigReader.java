@@ -12,14 +12,14 @@ public class ConfigReader {
     //bu class bize url ile ilgili gerekli datalari getirir
 
 
-    public static Properties properties;
+    public static Properties properties;//burada deger atanmadi sadece obje olusturuldu
 
     static{
         String dosyaYolu="configuration.properties";
         try {
             FileInputStream fis=new FileInputStream(dosyaYolu);//fis dosyayolunu tanimladigimiz configuration.properties
             //dosyasini okudu
-            properties=new Properties();
+            properties=new Properties();//burada deger atanmis oldu
             properties.load(fis);//fis'in okudugu bilgileri properties'e yukledi
         } catch (IOException e) {
             e.printStackTrace();

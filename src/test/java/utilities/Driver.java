@@ -18,6 +18,9 @@ public class Driver {
     ve en sonda driver'in kapatilmasi tercih edilir
      */
 
+    private Driver(){
+
+    }
     static WebDriver driver;
 
     public static WebDriver getDriver() {//baska bir class'a bir seyi goturebilmesi icin return etmesi gerekir methodun

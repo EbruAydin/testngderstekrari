@@ -29,11 +29,11 @@ public class E2ETesting {
     //8. Save butonuna tıklayın.
     //9. “Hotel was inserted successfully” textinin göründüğünü test edin.
     //10. OK butonuna tıklayın
+    HotelMyCampPage obj=new HotelMyCampPage();
 
     @Test
     public void createHotel() throws InterruptedException {
 
-        HotelMyCampPage obj=new HotelMyCampPage();
         Driver.getDriver().get(ConfigReader.getProperty("hotelUrl"));
 
         Actions action=new Actions(Driver.getDriver());

@@ -1,0 +1,52 @@
+========================================Paralel Test=========================================
+Bazen cok fazla test olabiliyor ve ayni thread uzerinden run etmek zaman kaybina yol acabilmektedir.
+Yani 100 testi run edecegimiz zaman sirasi geldiginde testin run olmasi demek zaman kaybi demektir.
+Bunun yerine paralel olarak ayni anda run etmek bu sureyi azaltmaktadir.
+Peki nasil yapilir?
+
+Maven ile terminalden paralel testi run etmek su sekilde oluyor:
+(Bilgisayarda maven oldugunu terminale mvn-version yazarak kontrol edebiliriz.)
+Paralel test icin maven'deki pom'a bir plugin eklemek gerekir.
+
+ <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.0</version>
+            </plugin>
+        </plugins>
+    </build>
+
+    https://maven.apache.org/surefire/maven-surefire-plugin/ buradan aliniyor.
+
+    bu calismayi yazdigim yer JUnit uzerinden paralel test yapiyor. JUnit ile paralel test yapmak istedigimiz zaman
+    ekstradan
+    <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-engine</artifactId>
+                <version>${junit.jupiter.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+    eklemek gerekiyor. bu siteden alinmistir:https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-engine/5.7.0
+    bu dependency diger JUnit dependency ihtiyaclarini karsiladigi icin sadece bu dependency kullanilabilinir.
+
+     terminal'e mvn test yazdigimiz zaman run edilmesini sagliyor testlerin ve bu pluginler de report etmesine
+        yardimci oluyor.
+
+JUnit icerisinde paralel run icin Junit platform properties isimli dosyayi eklemek gerekir. bu da src'de create edilen
+resources kismina eklenir genelde. .properties file dosyasidir.
+
+*junit-platform.properties dosyasına eklenecek değerler :
+ junit.jupiter.execution.parallel.enabled = true
+ junit.jupiter.execution.parallel.mode.default = concurrent
+
+ class bazinda paralel run etmek icin: @TestInstance (TestInstance.Lifecycle.PER_CLASS) olmali. BUradaki Lifecycle sagliyor
+ class duzeyinde pararlel run'i
+
+ test'leri paralel run etmek icin ise:@TestInstance (TestInstance.Lifecycle.PER_METHOD) yapariz. Ancak
+ burada TestInstance METHOD olarak degistirilecek ise @BeforeAll methodu static olarak degistirilmeli. Aksi
+ durumda hata verir. Biz paralel test yaparken hatalarin nerde oldugunu target icerisinde olusturulan
+ dosyalamadan detayli bir bicimde okuyabiliriz. Error yazar ve o errorlar icerisinde hatalarin neler oldugu
+ gosterilir.

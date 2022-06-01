@@ -15,11 +15,13 @@ public class PositiveTest {
     //test data password:Manager1!
     //obj.loginTusuElementi.click();
     //degerler girildiginde sayfaya basarili bir sekilde girildigini test edin.
+
+
+    HotelMyCampPage obj = new HotelMyCampPage();
     @Test
     public void positiveLoginTest() {
-        HotelMyCampPage obj = new HotelMyCampPage();
 
-        Driver.getDriver().get("https://www.hotelmycamp.com ");
+        Driver.getDriver().get("https://www.hotelmycamp.com");
 
         Actions action = new Actions(Driver.getDriver());
         action
@@ -50,4 +52,5 @@ public class PositiveTest {
         Driver.closeDriver();
 
     }
+
 }
