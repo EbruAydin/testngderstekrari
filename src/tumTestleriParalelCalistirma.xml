@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="istenen methodlar" verbose="3" parallel="classes" thread-count="3">
+    <!-- paralel calistirmak icin paralel= "" hangi seviyede calistirmak istersek ona gore kurguluyoruz.
+    paralel calistirmada isi bitiren browser baska gorevler alarak devam eder, mesela class seviyesinde
+    calistiracak isek bir classi alip bitiren diger baska classi alip devam eder. Method duzeyinde yaparsak da
+    aynisi gecerli olur. Bu durumda birbirine bagli methodlarda bagli methodlar icin tek bir browser calismaz, baska
+    browser da devrede olacagi icin bagli methodlari iki farkli browser calistirmis olur. Bu durumda da hata verdiriri.
+    eger bagli methodlar varsa class seviyesinde almak daha mantiklidir, ya da pararlel testing yapilacak ise
+    basindan itibaren kurgusu iyi oturtulmalidir.
+    thread-count kac tane browser calistiracagini belirler-->
+    <test name="regression">
+        <packages>
+            <package name="tests.*"></package>
+        </packages>
+    </test>
+</suite>
