@@ -1,4 +1,32 @@
 ========================================Paralel Test=========================================
+
+==================================TestNG icin=================================================
+dependency olarak once bunu ekliyoruz:
+<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+<dependency>
+    <groupId>com.aventstack</groupId>
+    <artifactId>extentreports</artifactId>
+    <version>4.0.9</version>
+</dependency>
+
+Extent Reports :
+HTML raporlama aracıdır. Bize Html raporları verir. Test adımlarını
+kaydetmemize yardımcı olur. Ayrıca ekran görüntüleri ekleyebiliriz.
+Html Reports
+3 tane obje olusturup kullaniriz
+1. ExtentReports extendReports; Raporlamayı başlatmak için
+ExtentReports'a ihtiyacımız var. flush() metodunu için
+ExtentReports kullanıyoruz.
+2.ExtentHtmlReporter extentHtmlReporter; Bu, özel raporlara ve
+raporların yapılandırmasına sahip olmamıza yardımcı olur,html
+raporlarını oluşturur. Bunu raporun oluşturulacağı yolu
+ayarlamak için de kullanıyoruz.
+3.ExtentTest extentTest; Bilgi eklemek için. Test adımlarını eklemek
+için (açıklama). Günlükleri(logs) ekliyoruz.
+extentTest.info ("URL'yi Açma"); bilgi sadece adım eklemek içindi
+
+
+=====================================jUnit icin=============================================
 Bazen cok fazla test olabiliyor ve ayni thread uzerinden run etmek zaman kaybina yol acabilmektedir.
 Yani 100 testi run edecegimiz zaman sirasi geldiginde testin run olmasi demek zaman kaybi demektir.
 Bunun yerine paralel olarak ayni anda run etmek bu sureyi azaltmaktadir.
