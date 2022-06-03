@@ -12,7 +12,7 @@ public class TestBase {
 
     protected WebDriver driver;
 
-    @BeforeMethod
+    @BeforeMethod (groups="grup2")
     public void setUp(){
         WebDriverManager.chromedriver().setup();
         driver=new ChromeDriver();
@@ -20,7 +20,7 @@ public class TestBase {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
     }
 
-    @AfterMethod
+    @AfterMethod (groups="grup2")
     public void tearDown(){
         driver.quit();
     }

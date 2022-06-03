@@ -1,0 +1,24 @@
+
+====================================xml File Olusturma uzerine notlar=============================================
+Veri saklamak ve farklı işletim sistemleri arasında veri transfer etmek için kullanılan metin işaretleme dili XML
+ile hazırlanmış dökümanlar .xml formatına sahip dosyalarda saklanır.Framework’umuzdeki belirli testleri veya
+tum testleri otomatik olarak calistirmak icin xml dosyalari kullaniriz.
+
+//https://testng.org/doc/documentation-main.html#testng-xml burada TestNG xml ile ilgili tum dokumanlara ulasilabilinir
+
+>Testng framework’de xml dosyasi kullanma nedenlerinden biri, belirli suitleri, testleri,package lari, classları
+veya methodlari çalıştırmaktır.
+>Belirli testleri, package lari, classları veya method’lari dahil edebilir (include) veya hariç (exclude) tutabiliriz.
+Bu da bize esneklik (flexiblity) kazandirir.
+➢ Sadece birkaç basit yapılandırma ile TestNG.xml dosyasını kullanarak belirli test  senaryolarını yürütebiliriz.
+
+Daha fazlasi icin: https://testng.org/doc/documentation-main.html
+
+Peki testler nasil calisir?
+
+xml dosyasi olusturulurken hiyerarsi(buyukten kucuge siralama) onemlidir. Her zaman suite ile basyalyip hangi seviyede
+test calistirmak istersek o seviyeye kadar sirali olarak kademeleri yazmaliyiz
+
+Eger calistiracagimiz class'lar farkli hiyerarsilere ait ise yine suite ile baslariz, sonra ayrisma kademesinden itibaren
+farkli hiyerarsi kumeleri olustururuz.
+

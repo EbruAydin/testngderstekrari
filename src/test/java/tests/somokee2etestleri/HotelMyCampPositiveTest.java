@@ -21,7 +21,7 @@ public class HotelMyCampPositiveTest {
 
         //login butonuna basin
         action
-                .click(obj.logIn)
+                .click(obj.loginTusuElementi)
                 .perform();
 
         //test data userName:manager

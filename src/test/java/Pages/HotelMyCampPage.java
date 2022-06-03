@@ -13,6 +13,7 @@ public class HotelMyCampPage {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
+
     //login butonuna basin
     @FindBy (linkText = "Log in")
     public WebElement logIn;

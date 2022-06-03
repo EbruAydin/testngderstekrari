@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="belirli package calistirma">
+    <test name="paket">
+        <packages>
+            <package name="tests.day17_pom"></package>
+            <package name="tests.day18_pom"></package>
+        </packages>
+        <!-- burada da  mesela bir package icerisindeki bir testi calistirmak istersek bunu da package olarak
+        degil asagidaki gibi ayrica test olarak cagirip class uzerinden testi run edebiliriz. Bu bizden
+        sonraki calisan icin daha anlasilir olur. Aksi durumda yukaridaki package icerisinde yaparsak
+        package ve class duzeyi karisacagi icin bizden sonra projeyi devr alan kisi icin clear olmaz. -->
+    </test>
+    <test name="ayri test classi">
+        <classes>
+            <class name="tests.somokee2etestleri.HotelMyCampPositiveTest"></class>
+        </classes>
+    </test>
+</suite>
+
